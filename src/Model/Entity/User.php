@@ -15,8 +15,8 @@ use Cake\ORM\Entity;
  * @property string $last_name
  * @property string $email
  * @property string $password
- * @property int $created
- * @property int|null $deleted
+ * @property \Cake\I18n\FrozenTime $created
+ * @property \Cake\I18n\FrozenTime|null $deleted
  *
  * @property \App\Model\Entity\Role $role
  * @property \App\Model\Entity\Order[] $orders

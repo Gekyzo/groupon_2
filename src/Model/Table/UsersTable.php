@@ -94,8 +94,8 @@ class UsersTable extends Table
             ->notEmptyString('password');
 
         $validator
-            ->integer('deleted')
-            ->allowEmptyString('deleted');
+            ->dateTime('deleted')
+            ->allowEmptyDateTime('deleted');
 
         return $validator;
     }
