@@ -41,3 +41,12 @@ nbproject/*
 .vscode
 # Sass preprocessor
 .sass-cache/
+
+# Node #
+#######################
+node_modules/
+webroot/css/*.css
+!webroot/css/cake.css
+!webroot/css/home.css
+!webroot/css/miligram.min.css
+webroot/js/*.js
