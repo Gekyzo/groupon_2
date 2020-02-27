@@ -32,8 +32,8 @@
                         <td><?= h($user->last_name) ?></td>
                         <td><?= h($user->email) ?></td>
                         <td><?= h($user->password) ?></td>
-                        <td><?= $this->Number->format($user->created) ?></td>
-                        <td><?= $this->Number->format($user->deleted) ?></td>
+                        <td><?= h($user->created) ?></td>
+                        <td><?= h($user->deleted) ?></td>
                         <td class="actions">
                             <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                             <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>

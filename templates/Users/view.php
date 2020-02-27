@@ -45,11 +45,11 @@
                 </tr>
                 <tr>
                     <th><?= __('Created') ?></th>
-                    <td><?= $this->Number->format($user->created) ?></td>
+                    <td><?= h($user->created) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Deleted') ?></th>
-                    <td><?= $this->Number->format($user->deleted) ?></td>
+                    <td><?= h($user->deleted) ?></td>
                 </tr>
             </table>
             <div class="related">

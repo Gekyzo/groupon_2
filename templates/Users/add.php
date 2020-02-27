@@ -18,12 +18,10 @@
             <fieldset>
                 <legend><?= __('Add User') ?></legend>
                 <?php
-                echo $this->Form->control('role_id', ['options' => $roles, 'empty' => true]);
                 echo $this->Form->control('first_name');
                 echo $this->Form->control('last_name');
                 echo $this->Form->control('email');
                 echo $this->Form->control('password');
-                echo $this->Form->control('deleted');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
