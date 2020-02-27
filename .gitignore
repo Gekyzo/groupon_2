@@ -1,7 +1,7 @@
 # CakePHP specific files #
 ##########################
-/config/app_local.php
-/config/.env
+# /config/app_local.php
+# /config/.env
 /logs/*
 /tmp/*
 /vendor/*
@@ -38,7 +38,7 @@ Thumbs.db
 # NetBeans
 nbproject/*
 # Visual Studio Code
-.vscode
+# .vscode
 # Sass preprocessor
 .sass-cache/
 
