@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "path": "C:\\xampp\\htdocs\\ciropon"
+        }
+    ],
+    "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[php]": {
+            "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+        }
+    }
+}
