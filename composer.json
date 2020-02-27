@@ -48,7 +48,9 @@
         "stan": "phpstan analyse src/",
         "test": "phpunit --colors=always",
         "project:install": "composer install",
-        "bake": "cd bin && cake bake"
+        "bake": "cd bin && cake bake",
+        "schema:snapshot": "@bake migration_snapshot",
+        "data:seed": "@bake seed"
     },
     "prefer-stable": true,
     "config": {
