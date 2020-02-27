@@ -32,7 +32,7 @@ class UsersFixture extends TestFixture
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
             'email' => ['type' => 'unique', 'columns' => ['email'], 'length' => []],
-            'users_ibfk_1' => ['type' => 'foreign', 'columns' => ['role_id'], 'references' => ['users', 'id'], 'update' => 'cascade', 'delete' => 'setNull', 'length' => []],
+            'FK_UserRole_rid' => ['type' => 'foreign', 'columns' => ['role_id'], 'references' => ['roles', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -55,8 +55,8 @@ class UsersFixture extends TestFixture
                 'last_name' => 'Lorem ipsum dolor sit amet',
                 'email' => 'Lorem ipsum dolor sit amet',
                 'password' => 'Lorem ipsum dolor sit amet',
-                'created' => '2020-02-27 14:12:36',
-                'deleted' => '2020-02-27 14:12:36',
+                'created' => '2020-02-27 14:35:20',
+                'deleted' => '2020-02-27 14:35:20',
             ],
         ];
         parent::init();
