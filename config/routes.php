@@ -66,6 +66,8 @@ $routes->scope('/', function (RouteBuilder $builder) {
      */
     $builder->connect('/', ['controller' => 'Pages', 'action' => 'home']);
 
+    $builder->connect('/categoria/*', ['controller' => 'pages', 'action' => 'category']);
+
     /*
      * ...and connect the rest of 'Pages' controller's URLs.
      */

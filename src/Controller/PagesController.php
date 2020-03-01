@@ -95,7 +95,17 @@ class PagesController extends AppController
         return $this->render();
     }
 
+    /**
+     * Muestra la página principal.
+     *
+     * @return void
+     */
     public function home()
     {
+        $this->loadModel('Categories');
+
+        $categories = $this->Categories->showActive();
+
+        $this->set(compact('categories'));
     }
 }
