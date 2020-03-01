@@ -42,8 +42,6 @@ class UsersController extends AppController
     {
         parent::beforeRender($event);
 
-        $this->viewBuilder()->setTheme('Fashi');
-
         $this->loadModel('Categories');
         $categories = $this->Categories->showActive();
 
@@ -152,6 +150,7 @@ class UsersController extends AppController
      */
     public function login()
     {
+        $this->viewBuilder()->setTheme('Fashi');
         $this->request->allowMethod(['get', 'post']);
         $result = $this->Authentication->getResult();
 
