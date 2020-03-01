@@ -49,6 +49,8 @@ class PagesController extends AppController
         // Allow all actions on this controller to unauthenticated visitors
         $action = $this->getRequest()->getParam('action');
         $this->Authentication->allowUnauthenticated([$action]);
+
+        $this->viewBuilder()->setTheme('Fashi');
     }
 
     /**
@@ -91,5 +93,9 @@ class PagesController extends AppController
         }
 
         return $this->render();
+    }
+
+    public function home()
+    {
     }
 }

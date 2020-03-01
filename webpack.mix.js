@@ -15,6 +15,6 @@ mix.js('resources/js/main.js', 'webroot/js')
     .sass('resources/sass/main.scss', 'webroot/css')
     .browserSync({
         proxy: 'local.ciropon.com',
-        files: ['(src|templates)/**/*.php'],
+        files: ['(src|templates|plugins)/**/*.php'],
         notify: false,
     })
