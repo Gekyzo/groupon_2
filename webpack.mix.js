@@ -1,4 +1,4 @@
-const mix = require("laravel-mix");
+const mix = require('laravel-mix')
 
 /*
  |--------------------------------------------------------------------------
@@ -11,9 +11,10 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.js("resources/js/main.js", "webroot/js")
-    .sass("resources/sass/main.scss", "webroot/css")
+mix.js('resources/js/main.js', 'webroot/js')
+    .sass('resources/sass/main.scss', 'webroot/css')
     .browserSync({
-        proxy: "local.ciropon.com",
-        files: ["(src|templates)/**/*.php"]
-    });
+        proxy: 'local.ciropon.com',
+        files: ['(src|templates)/**/*.php'],
+        notify: false,
+    })
