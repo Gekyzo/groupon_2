@@ -19,6 +19,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\Event\EventInterface;
 
 /**
  * Application Controller
@@ -53,5 +54,20 @@ class AppController extends Controller
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
         //$this->loadComponent('FormProtection');
+    }
+
+    /**
+     * Called after the controller action is run, but before the view is rendered. You can use this method
+     * to perform logic or set view variables that are required on every request.
+     *
+     * @param \Cake\Event\EventInterface $event An Event instance
+     * @return \Cake\Http\Response|null|void
+     * @link https://book.cakephp.org/4/en/controllers.html#request-life-cycle-callbacks
+     */
+    public function beforeRender(EventInterface $event)
+    {
+        $currentUser = $this->Authentication->getIdentity();
+
+        $this->set(compact('currentUser'));
     }
 }
