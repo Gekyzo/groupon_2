@@ -15,18 +15,20 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
+
     <?= $this->Html->charset() ?>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>
-        <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
+
     <?= $this->Html->meta('icon') ?>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
@@ -34,29 +36,27 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->Html->css('milligram.min.css') ?>
     <?= $this->Html->css('cake.css') ?>
+    <?= $this->Html->css('main.css') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+
 </head>
 
 <body>
-    <nav class="top-nav">
-        <div class="top-nav-title">
-            <a href="/"><span>Cake</span>PHP</a>
-        </div>
-        <div class="top-nav-links">
-            <?= $this->Html->link(__('Logout'), ['controller' => 'users', 'action' => 'logout']) ?>
-        </div>
-    </nav>
+
+    <?= $this->element('back/nav') ?>
+
     <main class="main">
         <div class="container">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
         </div>
+
     </main>
-    <footer>
-    </footer>
+
+    <?= $this->fetch('script') ?>
+
 </body>
 
 </html>

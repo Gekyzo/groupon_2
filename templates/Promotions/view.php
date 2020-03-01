@@ -87,9 +87,7 @@
                                     <td><?= h($images->created) ?></td>
                                     <td><?= h($images->deleted) ?></td>
                                     <td class="actions">
-                                        <?= $this->Html->link(__('View'), ['controller' => 'Images', 'action' => 'view', $images->id]) ?>
-                                        <?= $this->Html->link(__('Edit'), ['controller' => 'Images', 'action' => 'edit', $images->id]) ?>
-                                        <?= $this->Form->postLink(__('Delete'), ['controller' => 'Images', 'action' => 'delete', $images->id], ['confirm' => __('Are you sure you want to delete # {0}?', $images->id)]) ?>
+                                        <?= $this->element('back/actions', ['type' => 'images', 'id' => $images->id]) ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -116,9 +114,7 @@
                                     <td><?= h($orders->user_id) ?></td>
                                     <td><?= h($orders->created) ?></td>
                                     <td class="actions">
-                                        <?= $this->Html->link(__('View'), ['controller' => 'Orders', 'action' => 'view', $orders->id]) ?>
-                                        <?= $this->Html->link(__('Edit'), ['controller' => 'Orders', 'action' => 'edit', $orders->id]) ?>
-                                        <?= $this->Form->postLink(__('Delete'), ['controller' => 'Orders', 'action' => 'delete', $orders->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orders->id)]) ?>
+                                        <?= $this->element('back/actions', ['type' => 'orders', 'id' => $orders->id]) ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

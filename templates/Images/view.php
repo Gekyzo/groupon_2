@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Image $image
@@ -42,44 +43,42 @@
             <div class="related">
                 <h4><?= __('Related Promotions') ?></h4>
                 <?php if (!empty($image->promotions)) : ?>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <th><?= __('Id') ?></th>
-                            <th><?= __('Name') ?></th>
-                            <th><?= __('State') ?></th>
-                            <th><?= __('Category Id') ?></th>
-                            <th><?= __('Price Original') ?></th>
-                            <th><?= __('Price Discount') ?></th>
-                            <th><?= __('Body') ?></th>
-                            <th><?= __('Available Since') ?></th>
-                            <th><?= __('Available Until') ?></th>
-                            <th><?= __('Created') ?></th>
-                            <th><?= __('Deleted') ?></th>
-                            <th class="actions"><?= __('Actions') ?></th>
-                        </tr>
-                        <?php foreach ($image->promotions as $promotions) : ?>
-                        <tr>
-                            <td><?= h($promotions->id) ?></td>
-                            <td><?= h($promotions->name) ?></td>
-                            <td><?= h($promotions->state) ?></td>
-                            <td><?= h($promotions->category_id) ?></td>
-                            <td><?= h($promotions->price_original) ?></td>
-                            <td><?= h($promotions->price_discount) ?></td>
-                            <td><?= h($promotions->body) ?></td>
-                            <td><?= h($promotions->available_since) ?></td>
-                            <td><?= h($promotions->available_until) ?></td>
-                            <td><?= h($promotions->created) ?></td>
-                            <td><?= h($promotions->deleted) ?></td>
-                            <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Promotions', 'action' => 'view', $promotions->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'Promotions', 'action' => 'edit', $promotions->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Promotions', 'action' => 'delete', $promotions->id], ['confirm' => __('Are you sure you want to delete # {0}?', $promotions->id)]) ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </table>
-                </div>
+                    <div class="table-responsive">
+                        <table>
+                            <tr>
+                                <th><?= __('Id') ?></th>
+                                <th><?= __('Name') ?></th>
+                                <th><?= __('State') ?></th>
+                                <th><?= __('Category Id') ?></th>
+                                <th><?= __('Price Original') ?></th>
+                                <th><?= __('Price Discount') ?></th>
+                                <th><?= __('Body') ?></th>
+                                <th><?= __('Available Since') ?></th>
+                                <th><?= __('Available Until') ?></th>
+                                <th><?= __('Created') ?></th>
+                                <th><?= __('Deleted') ?></th>
+                                <th class="actions"><?= __('Actions') ?></th>
+                            </tr>
+                            <?php foreach ($image->promotions as $promotions) : ?>
+                                <tr>
+                                    <td><?= h($promotions->id) ?></td>
+                                    <td><?= h($promotions->name) ?></td>
+                                    <td><?= h($promotions->state) ?></td>
+                                    <td><?= h($promotions->category_id) ?></td>
+                                    <td><?= h($promotions->price_original) ?></td>
+                                    <td><?= h($promotions->price_discount) ?></td>
+                                    <td><?= h($promotions->body) ?></td>
+                                    <td><?= h($promotions->available_since) ?></td>
+                                    <td><?= h($promotions->available_until) ?></td>
+                                    <td><?= h($promotions->created) ?></td>
+                                    <td><?= h($promotions->deleted) ?></td>
+                                    <td class="actions">
+                                        <?= $this->element('back/actions', ['type' => 'promotions', 'id' => $promotion->id]) ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>

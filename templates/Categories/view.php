@@ -79,9 +79,7 @@
                                     <td><?= h($promotions->created) ?></td>
                                     <td><?= h($promotions->deleted) ?></td>
                                     <td class="actions">
-                                        <?= $this->Html->link(__('View'), ['controller' => 'Promotions', 'action' => 'view', $promotions->id]) ?>
-                                        <?= $this->Html->link(__('Edit'), ['controller' => 'Promotions', 'action' => 'edit', $promotions->id]) ?>
-                                        <?= $this->Form->postLink(__('Delete'), ['controller' => 'Promotions', 'action' => 'delete', $promotions->id], ['confirm' => __('Are you sure you want to delete # {0}?', $promotions->id)]) ?>
+                                        <?= $this->element('back/actions', ['type' => 'promotions', 'id' => $promotion->id]) ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

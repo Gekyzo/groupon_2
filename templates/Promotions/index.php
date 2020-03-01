@@ -39,23 +39,14 @@
                         <td><?= h($promotion->created) ?></td>
                         <td><?= h($promotion->deleted) ?></td>
                         <td class="actions">
-                            <?= $this->Html->link(__('View'), ['action' => 'view', $promotion->id]) ?>
-                            <?= $this->Html->link(__('Edit'), ['action' => 'edit', $promotion->id]) ?>
-                            <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $promotion->id], ['confirm' => __('Are you sure you want to delete # {0}?', $promotion->id)]) ?>
+                            <?= $this->element('back/actions', ['type' => 'promotions', 'id' => $promotion->id]) ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     </div>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
-    </div>
+
+    <?= $this->element('back/paginator') ?>
+
 </div>
