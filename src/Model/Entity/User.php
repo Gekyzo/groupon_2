@@ -54,7 +54,13 @@ class User extends Entity
         'password',
     ];
 
-    protected function _setPassword($password)
+    /**
+     * Hashea la contraseña del usuario cuando se registra.
+     *
+     * @param string $password
+     * @return string
+     */
+    protected function _setPassword(string $password): string
     {
         return (new DefaultPasswordHasher)->hash($password);
     }
