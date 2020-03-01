@@ -126,23 +126,43 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    /**
+     * Inicia la sesión del usuario conectado.
+     */
     public function login()
     {
         $this->request->allowMethod(['get', 'post']);
         $result = $this->Authentication->getResult();
-        // regardless of POST or GET, redirect if user is logged in
-        if ($result->isValid()) {
-            // redirect to /articles after login success
-            $redirect = $this->request->getQuery('redirect', [
-                'controller' => 'Articles',
-                'action' => 'index',
-            ]);
 
-            return $this->redirect($redirect);
+        if ($result->isValid()) {
+            $user = $this->Authentication->getIdentity();
+            $isAdmin = $this->Users->isAdmin($user);
+
+            if ($isAdmin) {
+                $target = ['controller' => 'promotions', 'action' => 'index'];
+            } else {
+                $target = ['controller' => 'pages', 'action' => 'home'];
+            }
+
+            return $this->redirect($target);
         }
-        // display error if user submitted and authentication failed
+
         if ($this->request->is('post') && !$result->isValid()) {
-            $this->Flash->error(__('Invalid username or password'));
+            $this->Flash->error(__('Los datos de acceso son incorrectos'));
         }
+    }
+
+    /**
+     * Cierra la sesión del usuario conectado.
+     *
+     * @return void
+     */
+    public function logout()
+    {
+        $this->Authentication->logout();
+
+        $this->Flash->success(__('Te has desconectado correctamente'));
+
+        return $this->redirect(['controller' => 'Pages', 'action' => 'home']);
     }
 }
