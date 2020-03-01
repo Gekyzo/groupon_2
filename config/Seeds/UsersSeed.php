@@ -27,11 +27,11 @@ class UsersSeed extends AbstractSeed
                 'password' => '$2y$10$4O4aqAkMC1LwqFqSJm8GLeER.SkKFWIFu1Pr0iIil4c/zz0PBZLS.'
             ],
             [
-                'role_id' => 1, 'first_name' => 'admin', 'last_name' => 'smith', 'email' => 'admin@test.com',
+                'role_id' => 1, 'first_name' => 'iván', 'last_name' => 'Godoy', 'email' => 'admin@test.com',
                 'password' => '$2y$10$4O4aqAkMC1LwqFqSJm8GLeER.SkKFWIFu1Pr0iIil4c/zz0PBZLS.'
             ],
             [
-                'role_id' => 2, 'first_name' => 'client', 'last_name' => 'smith', 'email' => 'client@test.com',
+                'role_id' => 2, 'first_name' => 'john', 'last_name' => 'smith', 'email' => 'client@test.com',
                 'password' => '$2y$10$4O4aqAkMC1LwqFqSJm8GLeER.SkKFWIFu1Pr0iIil4c/zz0PBZLS.'
             ]
         ];
