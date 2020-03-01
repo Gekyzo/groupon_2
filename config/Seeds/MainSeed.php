@@ -22,5 +22,8 @@ class MainSeed extends AbstractSeed
     public function run()
     {
         $this->call('RolesSeed');
+        $this->call('UsersSeed');
+        $this->call('CategoriesSeed');
+        $this->call('PromotionsSeed');
     }
 }
