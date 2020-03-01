@@ -12,7 +12,6 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $name
  * @property string|null $body
- * @property string|null $image
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime|null $deleted
  *
@@ -32,7 +31,6 @@ class Category extends Entity
     protected $_accessible = [
         'name' => true,
         'body' => true,
-        'image' => true,
         'created' => true,
         'deleted' => true,
         'promotions' => true,

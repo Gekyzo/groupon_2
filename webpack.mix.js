@@ -13,6 +13,11 @@ const mix = require('laravel-mix')
 
 mix.js('resources/js/main.js', 'webroot/js')
     .sass('resources/sass/main.scss', 'webroot/css')
+    .options({
+        fileLoaderDirs: {
+            fonts: 'webroot/font',
+        },
+    })
     .browserSync({
         proxy: 'local.ciropon.com',
         files: ['(src|templates|plugins)/**/*.php'],

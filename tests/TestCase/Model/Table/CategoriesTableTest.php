@@ -73,4 +73,24 @@ class CategoriesTableTest extends TestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
+
+    /**
+     * Test showActive method
+     *
+     * @return void
+     */
+    public function testShowActive(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test findByName method
+     *
+     * @return void
+     */
+    public function testFindByName(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
 }
