@@ -165,6 +165,8 @@ class UsersController extends AppController
                 $target = ['controller' => 'pages', 'action' => 'home'];
             }
 
+            $this->Flash->success(__('Bienvenido {0}', [ucfirst($user->get('first_name'))]));
+
             return $this->redirect($target);
         }
 
