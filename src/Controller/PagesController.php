@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -14,12 +15,14 @@ declare(strict_types=1);
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Core\Configure;
-use Cake\Http\Exception\ForbiddenException;
-use Cake\Http\Exception\NotFoundException;
+use Cake\Event\EventInterface;
 use Cake\Http\Response;
+use Cake\Http\Exception\NotFoundException;
+use Cake\Http\Exception\ForbiddenException;
 use Cake\View\Exception\MissingTemplateException;
 
 /**
@@ -31,6 +34,23 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class PagesController extends AppController
 {
+    /**
+     * Called before the controller action. You can use this method to configure and customize components
+     * or perform logic that needs to happen before each controller action.
+     *
+     * @param \Cake\Event\EventInterface $event An Event instance
+     * @return \Cake\Http\Response|null|void
+     * @link https://book.cakephp.org/4/en/controllers.html#request-life-cycle-callbacks
+     */
+    public function beforeFilter(EventInterface $event)
+    {
+        parent::beforeFilter($event);
+
+        // Allow all actions on this controller to unauthenticated visitors
+        $action = $this->getRequest()->getParam('action');
+        $this->Authentication->allowUnauthenticated([$action]);
+    }
+
     /**
      * Displays a view
      *
