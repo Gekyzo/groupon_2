@@ -100,4 +100,19 @@ class CategoriesTable extends Table
 
         return $query;
     }
+
+    /**
+     * Devuelve una categoría buscada por su nombre.
+     *
+     * @param \Cake\ORM\Query|null $query
+     * @return \App\Model\Entity\Category La entidad de la categoría buscada.
+     */
+    public function findByName(string $name): \App\Model\Entity\Category
+    {
+        $query = $this->showActive()
+            ->where(['Categories.name LIKE' => $name])
+            ->first();
+
+        return $query;
+    }
 }

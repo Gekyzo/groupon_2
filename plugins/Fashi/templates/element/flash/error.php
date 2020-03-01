@@ -5,13 +5,11 @@
  * @var array $params
  * @var string $message
  */
-$class = 'message';
-if (!empty($params['class'])) {
-    $class .= ' ' . $params['class'];
-}
 if (!isset($params['escape']) || $params['escape'] !== false) {
     $message = h($message);
 }
 ?>
 
-<div class="mt-4 <?= h($class) ?>" onclick="this.classList.add('hidden');"><?= $message ?></div>
+<div class="mt-4 alert alert-danger" role="alert" data-dismiss="alert">
+    <?= $message ?>
+</div>

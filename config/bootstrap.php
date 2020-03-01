@@ -49,6 +49,7 @@ use Cake\Mailer\Mailer;
 use Cake\Mailer\TransportFactory;
 use Cake\Routing\Router;
 use Cake\Utility\Security;
+use Cake\I18n\Number;
 
 /*
  * See https://github.com/josegonzalez/php-dotenv for API details.
@@ -221,3 +222,5 @@ ServerRequest::addDetector('tablet', function ($request) {
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
+
+Number::setDefaultCurrency('EUR');

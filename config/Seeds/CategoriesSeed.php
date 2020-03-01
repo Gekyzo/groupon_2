@@ -33,11 +33,6 @@ class CategoriesSeed extends AbstractSeed
                 'image' => 'belleza.png'
             ],
             [
-                'name' => 'cultura',
-                'body' => 'tickets para los eventos que más te interesan',
-                'image' => 'cultura.png'
-            ],
-            [
                 'name' => 'experiencias',
                 'body' => 'si te gusta la adrenalina, este es tu sitio',
                 'image' => 'experiencias.png'

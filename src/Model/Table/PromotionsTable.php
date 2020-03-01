@@ -127,4 +127,33 @@ class PromotionsTable extends Table
 
         return $rules;
     }
+
+    /**
+     * Devuelve todas las promociones que cumplen las condiciones para ser consideras activas.
+     *
+     * @param \Cake\ORM\Query|null $query
+     * @return \Cake\ORM\Query
+     */
+    public function showActive($query = null): \Cake\ORM\Query
+    {
+        $query = ($query) ?: $this->find();
+        $query = $query->where(['Promotions.state IS' => 1]);
+
+        return $query;
+    }
+
+    /**
+     * Devuelve todas las promociones asociadas a una categoría.
+     *
+     * @param integer $categoryId La ID de la categoría filtrada.
+     * @return \Cake\ORM\Query
+     */
+    public function inCategory(int $categoryId): \Cake\ORM\Query
+    {
+        $query = $this
+            ->showActive()
+            ->where(['Promotions.category_id' => $categoryId]);
+
+        return $query;
+    }
 }

@@ -14,4 +14,6 @@ if (!isset($params['escape']) || $params['escape'] !== false) {
 }
 ?>
 
-<div class="mt-4 <?= h($class) ?>" onclick="this.classList.add('hidden');"><?= $message ?></div>
+<div class="alert alert-info <?= h($class) ?>" role="alert" data-dismiss="alert">
+    <?= $message ?>
+</div>

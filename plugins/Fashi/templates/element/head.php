@@ -22,6 +22,7 @@
     <?= $this->Html->css('jquery-ui.min') ?>
     <?= $this->Html->css('slicknav.min') ?>
     <?= $this->Html->css('style') ?>
+    <?= $this->Html->css('trump') ?>
 
     <?= $this->fetch('css') ?>
 </head>

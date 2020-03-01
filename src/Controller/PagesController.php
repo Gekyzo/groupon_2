@@ -50,7 +50,27 @@ class PagesController extends AppController
         $action = $this->getRequest()->getParam('action');
         $this->Authentication->allowUnauthenticated([$action]);
 
+        $this->loadModel('Categories');
+        $this->loadModel('Promotions');
+    }
+
+    /**
+     * Called after the controller action is run, but before the view is rendered. You can use this method
+     * to perform logic or set view variables that are required on every request.
+     *
+     * @param \Cake\Event\EventInterface $event An Event instance
+     * @return \Cake\Http\Response|null|void
+     * @link https://book.cakephp.org/4/en/controllers.html#request-life-cycle-callbacks
+     */
+    public function beforeRender(EventInterface $event)
+    {
+        parent::beforeRender($event);
+
         $this->viewBuilder()->setTheme('Fashi');
+
+        $categories = $this->Categories->showActive();
+
+        $this->set(compact('categories'));
     }
 
     /**
@@ -102,10 +122,20 @@ class PagesController extends AppController
      */
     public function home()
     {
-        $this->loadModel('Categories');
+    }
 
-        $categories = $this->Categories->showActive();
+    /**
+     * Muestra la página de una categoría filtrando por su nombre.
+     *
+     * @param string $name El nombre de la categoría filtrada.
+     * @return void
+     */
+    public function category(string $name)
+    {
+        $categoryFilter = $this->Categories->findByName($name);
+        $promotions = $this->Promotions->inCategory($categoryFilter->id);
 
-        $this->set(compact('categories'));
+        $this->set('currentCategory', $categoryFilter);
+        $this->set(compact('promotions'));
     }
 }

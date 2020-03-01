@@ -39,12 +39,11 @@
             <div class="row">
                 <div class="col-md-9">
                     <div class="logo">
-                        <a href="./index.html">
-                            <?= $this->Html->image('logo.png') ?>
-                        </a>
+                        <?= $this->Html->image('logo.png', ['url' => ['controller' => 'pages', 'action' => 'home']]) ?>
                     </div>
                 </div>
                 <div class="text-right col-md-3">
+
                     <ul class="nav-right">
                         <li class="cart-icon">
                             <a href="#">
@@ -56,7 +55,7 @@
                                     <table>
                                         <tbody>
                                             <tr>
-                                                <td class="si-pic"><?= $this->Html->image('select-product-1.jpg') ?>></td>
+                                                <td class="si-pic"><?= $this->Html->image('select-product-1.jpg') ?></td>
                                                 <td class="si-text">
                                                     <div class="product-selected">
                                                         <p>$60.00 x 1</p>
@@ -68,7 +67,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="si-pic"><?= $this->Html->image('select-product-2.jpg') ?>></td>
+                                                <td class="si-pic"><?= $this->Html->image('select-product-2.jpg') ?></td>
                                                 <td class="si-text">
                                                     <div class="product-selected">
                                                         <p>$60.00 x 1</p>
@@ -94,6 +93,7 @@
                         </li>
                         <li class="cart-price">$150.00</li>
                     </ul>
+
                 </div>
             </div>
         </div>

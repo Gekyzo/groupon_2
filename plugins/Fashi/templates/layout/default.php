@@ -8,19 +8,11 @@
 
     <?= $this->element('header') ?>
 
-    <?= $this->element('hero') ?>
+    <div class="container">
+        <?= $this->Flash->render() ?>
+    </div>
 
-    <?= $this->element('banner') ?>
-
-    <?= $this->element('women') ?>
-
-    <?= $this->element('deal') ?>
-
-    <?= $this->element('men') ?>
-
-    <?= $this->element('instagram') ?>
-
-    <?= $this->element('blog') ?>
+    <?= $this->fetch('content') ?>
 
     <?= $this->element('partners') ?>
 
