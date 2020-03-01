@@ -18,4 +18,5 @@ npm run watch
 -   Actualizar los datos de conexión con la base de datos en el archivo `config/.env`
 -   Ejecutar el script de instalación (dura ~5 minutos)
     -   `composer project:install`
--   Listo!
+-   Lanzar la aplicación mediante el comando
+    -   `composer project:serve`

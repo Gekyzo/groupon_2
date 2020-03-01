@@ -60,7 +60,8 @@
         "schema:apply": "@cake migrations migrate",
         "data:seed": "@bake seed",
         "data:apply": "@cake migrations seed --seed=MainSeed",
-        "project:install": "composer install --no-interaction"
+        "project:install": "composer install --no-interaction",
+        "project:serve": "@cake server"
     },
     "prefer-stable": true,
     "config": {
