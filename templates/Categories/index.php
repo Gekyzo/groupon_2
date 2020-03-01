@@ -19,10 +19,10 @@
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('name') ?></th>
-                    <th><?= $this->Paginator->sort('image') ?></th>
-                    <th><?= $this->Paginator->sort('created') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
+                    <th><?= $this->Paginator->sort('name', ['label' => __('Nombre')]) ?></th>
+                    <th><?= $this->Paginator->sort('image', ['label' => __('Imagen')]) ?></th>
+                    <th><?= $this->Paginator->sort('created', ['label' => __('Fecha creación')]) ?></th>
+                    <th class="actions"><?= __('Acciones') ?></th>
                 </tr>
             </thead>
 

@@ -8,7 +8,7 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
+            <h4 class="heading"><?= __('Acciones') ?></h4>
             <?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id], ['class' => 'side-nav-item']) ?>
             <?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id), 'class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('List Users'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
@@ -62,7 +62,7 @@
                                 <th><?= __('Promotion Id') ?></th>
                                 <th><?= __('User Id') ?></th>
                                 <th><?= __('Created') ?></th>
-                                <th class="actions"><?= __('Actions') ?></th>
+                                <th class="actions"><?= __('Acciones') ?></th>
                             </tr>
                             <?php foreach ($user->orders as $orders) : ?>
                                 <tr>

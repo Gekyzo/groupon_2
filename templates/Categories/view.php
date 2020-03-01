@@ -8,7 +8,7 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
+            <h4 class="heading"><?= __('Acciones') ?></h4>
             <?= $this->Html->link(__('Edit Category'), ['action' => 'edit', $category->id], ['class' => 'side-nav-item']) ?>
             <?= $this->Form->postLink(__('Delete Category'), ['action' => 'delete', $category->id], ['confirm' => __('Are you sure you want to delete # {0}?', $category->id), 'class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('List Categories'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
@@ -63,7 +63,7 @@
                                 <th><?= __('Available Until') ?></th>
                                 <th><?= __('Created') ?></th>
                                 <th><?= __('Deleted') ?></th>
-                                <th class="actions"><?= __('Actions') ?></th>
+                                <th class="actions"><?= __('Acciones') ?></th>
                             </tr>
                             <?php foreach ($category->promotions as $promotions) : ?>
                                 <tr>
@@ -71,8 +71,8 @@
                                     <td><?= h($promotions->name) ?></td>
                                     <td><?= h($promotions->state) ?></td>
                                     <td><?= h($promotions->category_id) ?></td>
-                                    <td><?= h($promotions->price_original) ?></td>
-                                    <td><?= h($promotions->price_discount) ?></td>
+                                    <td><?= $this->Number->currency($promotions->price_original) ?></td>
+                                    <td><?= $this->Number->currency($promotions->price_discount) ?></td>
                                     <td><?= h($promotions->body) ?></td>
                                     <td><?= h($promotions->available_since) ?></td>
                                     <td><?= h($promotions->available_until) ?></td>

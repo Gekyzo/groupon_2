@@ -8,7 +8,7 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
+            <h4 class="heading"><?= __('Acciones') ?></h4>
             <?= $this->Html->link(__('Edit Promotion'), ['action' => 'edit', $promotion->id], ['class' => 'side-nav-item']) ?>
             <?= $this->Form->postLink(__('Delete Promotion'), ['action' => 'delete', $promotion->id], ['confirm' => __('Are you sure you want to delete # {0}?', $promotion->id), 'class' => 'side-nav-item']) ?>
             <?= $this->Html->link(__('List Promotions'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
@@ -33,11 +33,11 @@
                 </tr>
                 <tr>
                     <th><?= __('Price Original') ?></th>
-                    <td><?= $this->Number->format($promotion->price_original) ?></td>
+                    <td><?= $this->Number->currency($promotion->price_original) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Price Discount') ?></th>
-                    <td><?= $this->Number->format($promotion->price_discount) ?></td>
+                    <td><?= $this->Number->currency($promotion->price_discount) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Available Since') ?></th>
@@ -77,7 +77,7 @@
                                 <th><?= __('Path') ?></th>
                                 <th><?= __('Created') ?></th>
                                 <th><?= __('Deleted') ?></th>
-                                <th class="actions"><?= __('Actions') ?></th>
+                                <th class="actions"><?= __('Acciones') ?></th>
                             </tr>
                             <?php foreach ($promotion->images as $images) : ?>
                                 <tr>
@@ -105,7 +105,7 @@
                                 <th><?= __('Promotion Id') ?></th>
                                 <th><?= __('User Id') ?></th>
                                 <th><?= __('Created') ?></th>
-                                <th class="actions"><?= __('Actions') ?></th>
+                                <th class="actions"><?= __('Acciones') ?></th>
                             </tr>
                             <?php foreach ($promotion->orders as $orders) : ?>
                                 <tr>

@@ -5,6 +5,7 @@
  * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $users
  */
 ?>
+
 <div class="users index content">
     <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Users') ?></h3>
@@ -13,14 +14,12 @@
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('role_id') ?></th>
-                    <th><?= $this->Paginator->sort('first_name') ?></th>
-                    <th><?= $this->Paginator->sort('last_name') ?></th>
-                    <th><?= $this->Paginator->sort('email') ?></th>
-                    <th><?= $this->Paginator->sort('password') ?></th>
-                    <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('deleted') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
+                    <th><?= $this->Paginator->sort('role_id', ['label' => __('Rol')]) ?></th>
+                    <th><?= $this->Paginator->sort('first_name', ['label' => __('Nombre')]) ?></th>
+                    <th><?= $this->Paginator->sort('last_name', ['label' => __('Apellidos')]) ?></th>
+                    <th><?= $this->Paginator->sort('email', ['label' => __('Email')]) ?></th>
+                    <th><?= $this->Paginator->sort('created', ['label' => __('Fecha creación')]) ?></th>
+                    <th class="actions"><?= __('Acciones') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -31,9 +30,7 @@
                         <td><?= h($user->first_name) ?></td>
                         <td><?= h($user->last_name) ?></td>
                         <td><?= h($user->email) ?></td>
-                        <td><?= h($user->password) ?></td>
                         <td><?= h($user->created) ?></td>
-                        <td><?= h($user->deleted) ?></td>
                         <td class="actions">
                             <?= $this->element('back/actions', ['type' => 'users', 'id' => $user->id]) ?>
                         </td>
