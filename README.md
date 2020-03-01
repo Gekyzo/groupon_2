@@ -20,3 +20,19 @@ npm run watch
     -   `composer project:install`
 -   Lanzar la aplicación mediante el comando
     -   `composer project:serve`
+
+## Datos de acceso
+
+Existen ciertos usuarios ya creados en la base de datos. Cada uno tiene acceso a una parte de la aplicación.
+
+### Administrador
+
+> Email: admin@test.com
+>
+> Password: secret
+
+### Cliente
+
+> Email: client@test.com
+>
+> Password: secret
