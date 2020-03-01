@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Routes configuration.
  *
@@ -42,6 +43,7 @@ use Cake\Routing\RouteBuilder;
  * inconsistently cased URLs when used with `:plugin`, `:controller` and
  * `:action` markers.
  */
+
 /** @var \Cake\Routing\RouteBuilder $routes */
 $routes->setRouteClass(DashedRoute::class);
 
@@ -62,7 +64,12 @@ $routes->scope('/', function (RouteBuilder $builder) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, templates/Pages/home.php)...
      */
-    $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    $builder->connect('/', ['controller' => 'Pages', 'action' => 'home']);
+
+    $builder->connect('/categoria/*', ['controller' => 'pages', 'action' => 'category']);
+
+    $builder->connect('/login', ['controller' => 'users', 'action' => 'login']);
+    $builder->connect('/logout', ['controller' => 'users', 'action' => 'logout']);
 
     /*
      * ...and connect the rest of 'Pages' controller's URLs.

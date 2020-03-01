@@ -86,4 +86,33 @@ class CategoriesTable extends Table
 
         return $validator;
     }
+
+    /**
+     * Devuelve todas las categorías que cumplen las condiciones para ser consideras activas.
+     *
+     * @param \Cake\ORM\Query|null $query
+     * @return \Cake\ORM\Query
+     */
+    public function showActive($query = null): \Cake\ORM\Query
+    {
+        $query = ($query) ?: $this->find();
+        $query = $query->where(['Categories.deleted IS' => null]);
+
+        return $query;
+    }
+
+    /**
+     * Devuelve una categoría buscada por su nombre.
+     *
+     * @param \Cake\ORM\Query|null $query
+     * @return \App\Model\Entity\Category La entidad de la categoría buscada.
+     */
+    public function findByName(string $name): \App\Model\Entity\Category
+    {
+        $query = $this->showActive()
+            ->where(['Categories.name LIKE' => $name])
+            ->first();
+
+        return $query;
+    }
 }

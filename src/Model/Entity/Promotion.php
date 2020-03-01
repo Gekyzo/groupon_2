@@ -51,4 +51,16 @@ class Promotion extends Entity
         'orders' => true,
         'images' => true,
     ];
+
+    protected $_virtual = ['placeholder_image'];
+
+    /**
+     * Devuelve una imagen placeholder
+     *
+     * @return void
+     */
+    protected function _getPlaceholderImage()
+    {
+        return 'https://via.placeholder.com/300x300';
+    }
 }

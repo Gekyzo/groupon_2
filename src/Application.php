@@ -24,6 +24,7 @@ use Cake\Error\Middleware\ErrorHandlerMiddleware;
 use Cake\Http\BaseApplication;
 use Cake\Http\MiddlewareQueue;
 use Cake\Routing\Middleware\AssetMiddleware;
+use Cake\Routing\Router;
 use Cake\Routing\Middleware\RoutingMiddleware;
 use Authentication\AuthenticationService;
 use Authentication\AuthenticationServiceInterface;
@@ -54,15 +55,16 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         }
 
         /*
-         * Only try to load DebugKit in development mode
-         * Debug Kit should not be installed on a production system
-         */
+        * Only try to load DebugKit in development mode
+        * Debug Kit should not be installed on a production system
+        */
         if (Configure::read('debug')) {
             $this->addPlugin('DebugKit');
         }
 
         // Load more plugins here
         $this->addPlugin('Authentication');
+        $this->addPlugin('Fashi');
     }
 
     /**
@@ -131,7 +133,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
     {
         $service = new AuthenticationService();
         $service->setConfig([
-            'unauthenticatedRedirect' => '/users/login',
+            'unauthenticatedRedirect' => Router::url(['controller' => 'users', 'action' => 'login']),
             'queryParam' => 'redirect',
         ]);
 
@@ -144,7 +146,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         $service->loadAuthenticator('Authentication.Session');
         $service->loadAuthenticator('Authentication.Form', [
             'fields' => $fields,
-            'loginUrl' => '/users/login'
+            'loginUrl' => Router::url(['controller' => 'users', 'action' => 'login'])
         ]);
 
         // Load identifiers

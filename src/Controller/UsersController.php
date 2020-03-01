@@ -29,6 +29,27 @@ class UsersController extends AppController
 
         $this->Authentication->addUnauthenticatedActions(['add', 'login', 'logout']);
     }
+
+    /**
+     * Called after the controller action is run, but before the view is rendered. You can use this method
+     * to perform logic or set view variables that are required on every request.
+     *
+     * @param \Cake\Event\EventInterface $event An Event instance
+     * @return \Cake\Http\Response|null|void
+     * @link https://book.cakephp.org/4/en/controllers.html#request-life-cycle-callbacks
+     */
+    public function beforeRender(EventInterface $event)
+    {
+        parent::beforeRender($event);
+
+        $this->viewBuilder()->setTheme('Fashi');
+
+        $this->loadModel('Categories');
+        $categories = $this->Categories->showActive();
+
+        $this->set(compact('categories'));
+    }
+
     /**
      * Index method
      *
@@ -143,6 +164,8 @@ class UsersController extends AppController
             } else {
                 $target = ['controller' => 'pages', 'action' => 'home'];
             }
+
+            $this->Flash->success(__('Bienvenido {0}', [ucfirst($user->get('first_name'))]));
 
             return $this->redirect($target);
         }
