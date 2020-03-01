@@ -20,7 +20,6 @@
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('name', ['label' => __('Nombre')]) ?></th>
-                    <th><?= $this->Paginator->sort('image', ['label' => __('Imagen')]) ?></th>
                     <th><?= $this->Paginator->sort('created', ['label' => __('Fecha creación')]) ?></th>
                     <th class="actions"><?= __('Acciones') ?></th>
                 </tr>
@@ -31,7 +30,6 @@
                     <tr>
                         <td><?= $this->Number->format($category->id) ?></td>
                         <td><?= h($category->name) ?></td>
-                        <td><?= h($category->image) ?></td>
                         <td><?= h($category->created) ?></td>
 
                         <td class="actions">

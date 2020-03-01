@@ -24,10 +24,6 @@
                     <td><?= h($category->name) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Image') ?></th>
-                    <td><?= h($category->image) ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($category->id) ?></td>
                 </tr>

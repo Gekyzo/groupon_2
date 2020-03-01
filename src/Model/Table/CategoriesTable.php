@@ -76,11 +76,6 @@ class CategoriesTable extends Table
             ->allowEmptyString('body');
 
         $validator
-            ->scalar('image')
-            ->maxLength('image', 255)
-            ->allowEmptyFile('image');
-
-        $validator
             ->dateTime('deleted')
             ->allowEmptyDateTime('deleted');
 
