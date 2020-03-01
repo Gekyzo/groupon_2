@@ -37,7 +37,13 @@
         }
     },
     "scripts": {
-        "post-install-cmd": "App\\Console\\Installer::postInstall",
+        "post-install-cmd": [
+            "App\\Console\\Installer::postInstall",
+            "@schema:apply",
+            "@data:apply",
+            "npm install --loglevel verbose",
+            "npm run prod"
+        ],
         "post-create-project-cmd": "App\\Console\\Installer::postInstall",
         "post-autoload-dump": "Cake\\Composer\\Installer\\PluginInstaller::postAutoloadDump",
         "check": [
@@ -54,11 +60,8 @@
         "schema:apply": "@cake migrations migrate",
         "data:seed": "@bake seed",
         "data:apply": "@cake migrations seed --seed=MainSeed",
-        "project:install": [
-            "composer install",
-            "@schema:apply",
-            "@data:apply"
-        ]
+        "project:install": "composer install --no-interaction",
+        "project:serve": "@cake server"
     },
     "prefer-stable": true,
     "config": {

@@ -14,8 +14,9 @@ npm run watch
 
 ## Instalación
 
--   Crear la base de datos (ciropon)
--   Crear el usuario en la BD y asociarlo a la BD (ciropon / secret)
--   Ejecutar el script de instalación
+-   Crear una base de datos y un usuario
+-   Actualizar los datos de conexión con la base de datos en el archivo `config/.env`
+-   Ejecutar el script de instalación (dura ~5 minutos)
     -   `composer project:install`
--   Abrir la página en el navegador
+-   Lanzar la aplicación mediante el comando
+    -   `composer project:serve`
