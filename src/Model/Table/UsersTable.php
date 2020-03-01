@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Model\Table;
 
+use Authentication\Identity;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
@@ -113,5 +114,26 @@ class UsersTable extends Table
         $rules->add($rules->existsIn(['role_id'], 'Roles'));
 
         return $rules;
+    }
+
+    /**
+     * Comprueba si un usuario tiene permisos de administración o no.
+     *
+     * @param \Authentication\Identity|null $user
+     * @return bool
+     */
+    public function isAdmin(?Identity $user): bool
+    {
+        if (is_null($user)) {
+            return false;
+        }
+
+        $role = $user->get('role_id');
+
+        if ($role === 1) {
+            return true;
+        }
+
+        return false;
     }
 }
