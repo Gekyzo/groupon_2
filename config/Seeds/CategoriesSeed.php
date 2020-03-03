@@ -25,27 +25,22 @@ class CategoriesSeed extends AbstractSeed
             [
                 'name' => 'relax',
                 'body' => 'las mejores ofertas para que te relajes',
-                'image' => 'relax.png'
             ],
             [
                 'name' => 'belleza',
                 'body' => 'mens sana in corpore sano',
-                'image' => 'belleza.png'
             ],
             [
                 'name' => 'experiencias',
                 'body' => 'si te gusta la adrenalina, este es tu sitio',
-                'image' => 'experiencias.png'
             ],
             [
                 'name' => 'viajes',
                 'body' => 'disfruta de una esa escapada que tanto esperabas',
-                'image' => 'viajes.png'
             ],
             [
                 'name' => 'restaurantes',
                 'body' => 'la mejor oferta gastronómica de tu ciudad',
-                'image' => 'restaurantes.png'
             ],
         ];
 

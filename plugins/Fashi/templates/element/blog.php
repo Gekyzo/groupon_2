@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="single-latest-blog">
-                    <?= $this->Html->image('latest-1.jpg') ?>>
+                    <?= $this->Html->image('latest-1.jpg') ?>
                     <div class="latest-text">
                         <div class="tag-list">
                             <div class="tag-item">
@@ -32,7 +32,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="single-latest-blog">
-                    <?= $this->Html->image('latest-2.jpg') ?>>
+                    <?= $this->Html->image('latest-2.jpg') ?>
                     <div class="latest-text">
                         <div class="tag-list">
                             <div class="tag-item">
@@ -53,7 +53,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="single-latest-blog">
-                    <?= $this->Html->image('latest-3.jpg') ?>>
+                    <?= $this->Html->image('latest-3.jpg') ?>
                     <div class="latest-text">
                         <div class="tag-list">
                             <div class="tag-item">
@@ -78,7 +78,7 @@
                 <div class="col-lg-4">
                     <div class="single-benefit">
                         <div class="sb-icon">
-                            <?= $this->Html->image('icon-1.png') ?>>
+                            <?= $this->Html->image('icon-1.png') ?>
                         </div>
                         <div class="sb-text">
                             <h6>Free Shipping</h6>
@@ -89,7 +89,7 @@
                 <div class="col-lg-4">
                     <div class="single-benefit">
                         <div class="sb-icon">
-                            <?= $this->Html->image('icon-2.png') ?>>
+                            <?= $this->Html->image('icon-2.png') ?>
                         </div>
                         <div class="sb-text">
                             <h6>Delivery On Time</h6>
@@ -100,7 +100,7 @@
                 <div class="col-lg-4">
                     <div class="single-benefit">
                         <div class="sb-icon">
-                            <?= $this->Html->image('icon-1.png') ?>>
+                            <?= $this->Html->image('icon-1.png') ?>
                         </div>
                         <div class="sb-text">
                             <h6>Secure Payment</h6>
