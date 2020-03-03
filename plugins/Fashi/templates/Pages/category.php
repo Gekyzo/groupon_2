@@ -44,3 +44,5 @@
     </div>
 </section>
 <!-- Product Shop Section End -->
+
+<?= $this->Html->script('cart.js', ['block' => 'scriptBottom']) ?>

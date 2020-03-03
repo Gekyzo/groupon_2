@@ -20,7 +20,7 @@
                 <div class="product-slider owl-carousel">
                     <div class="product-item">
                         <div class="pi-pic">
-                            <?= $this->Html->image('products/women-1.jpg') ?>>
+                            <?= $this->Html->image('products/women-1.jpg') ?>
                             <div class="sale">Sale</div>
                             <div class="icon">
                                 <i class="icon_heart_alt"></i>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="product-item">
                         <div class="pi-pic">
-                            <?= $this->Html->image('products/women-2.jpg') ?>>
+                            <?= $this->Html->image('products/women-2.jpg') ?>
                             <div class="icon">
                                 <i class="icon_heart_alt"></i>
                             </div>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="product-item">
                         <div class="pi-pic">
-                            <?= $this->Html->image('products/women-3.jpg') ?>>
+                            <?= $this->Html->image('products/women-3.jpg') ?>
                             <div class="icon">
                                 <i class="icon_heart_alt"></i>
                             </div>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="product-item">
                         <div class="pi-pic">
-                            <?= $this->Html->image('products/women-4.jpg') ?>>
+                            <?= $this->Html->image('products/women-4.jpg') ?>
                             <div class="icon">
                                 <i class="icon_heart_alt"></i>
                             </div>

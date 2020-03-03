@@ -20,6 +20,8 @@
 
     <?= $this->element('scripts') ?>
 
+    <?= $this->fetch('scriptBottom') ?>
+
 </body>
 
 </html>

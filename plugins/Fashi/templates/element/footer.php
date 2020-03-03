@@ -5,7 +5,7 @@
             <div class="col-lg-3">
                 <div class="footer-left">
                     <div class="footer-logo">
-                        <a href="#"><?= $this->Html->image('footer-logo.png') ?>></a>
+                        <a href="#"><?= $this->Html->image('footer-logo.png') ?></a>
                     </div>
                     <ul>
                         <li>Address: 60-49 Road 11378 New York</li>
@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="payment-pic">
-                        <?= $this->Html->image('payment-method.png') ?>>
+                        <?= $this->Html->image('payment-method.png') ?>
                     </div>
                 </div>
             </div>
